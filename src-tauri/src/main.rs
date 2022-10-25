@@ -18,9 +18,11 @@ async fn search_anime(name: String) -> String {
 
     let json: serde_json::Value = serde_json::from_str(&body).unwrap();
 
-    let title = json["data"][0]["title"].as_str().unwrap();
+    let results = json["data"].as_array().unwrap();
 
-    format!("Found {}", title)
+    for i in results {
+        println!("{}", i["title"]);
+    }
 }
 
 fn main() {
