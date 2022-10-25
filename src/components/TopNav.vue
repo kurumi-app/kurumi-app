@@ -13,8 +13,12 @@ import { invoke } from "@tauri-apps/api/tauri";
 
 <template>
     <div class="nav-wrapper">
-        <div class="logo">
-            <img src="../assets/neko.png" alt="" srcset="">
+        <div class="brand">
+            <div class="logo">
+                <img src="../assets/neko.png" alt="" srcset="">
+            </div>
+
+
         </div>
 
         <div class="search">
@@ -28,11 +32,25 @@ import { invoke } from "@tauri-apps/api/tauri";
 
         <div class="navigation">
             <div class="links">
-                <button class="drac-btn drac-bg-purple drac-m-sm">Currently Watching</button>
-                <button class="drac-btn drac-bg-purple drac-m-sm">Completed</button>
-                <button class="drac-btn drac-bg-purple drac-m-sm">On Hold</button>
-                <button class="drac-btn drac-bg-purple drac-m-sm">Dropped</button>
-                <button class="drac-btn drac-bg-purple drac-m-sm">Plan To Watch</button>
+                <div class="drac-box">
+                    <ul class="drac-tabs drac-tabs-purple">
+                        <li class="drac-tab drac-tab-active">
+                            <a class="drac-tab-link drac-text" href="#">Currently Watching</a>
+                        </li>
+                        <li class="drac-tab">
+                            <a class="drac-tab-link drac-text" href="#">Completed</a>
+                        </li>
+                        <li class="drac-tab">
+                            <a class="drac-tab-link drac-text" href="#">On Hold</a>
+                        </li>
+                        <li class="drac-tab">
+                            <a class="drac-tab-link drac-text" href="#">Dropped</a>
+                        </li>
+                        <li class="drac-tab">
+                            <a class="drac-tab-link drac-text" href="#">Plant To Watch</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -45,21 +63,19 @@ import { invoke } from "@tauri-apps/api/tauri";
 .nav-wrapper {
     display: flex;
     flex-direction: row;
-    align-items: center;
     height: 3rem;
+    flex: 1;
 }
 
 .navigation {
     display: flex;
     flex-direction: row;
     align-items: right;
-    justify-content: right;
-    flex: 1;
+    justify-content: center;
+    flex: 2;
 }
 
-.links button {
-    margin-right: 5px;
-}
+
 
 h1 {
     text-align: center;
@@ -71,12 +87,18 @@ img {
     filter: drop-shadow(0 0 1em #747bff);
 }
 
-.search {
+.brand {
+    margin-top: -20px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .searchinput {
     width: 20rem;
+}
+
+.search {
     margin-top: 15px;
 }
 

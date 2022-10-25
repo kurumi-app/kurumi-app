@@ -8,7 +8,7 @@ import TopNav from "./components/TopNav.vue";
 <template>
   <div class="container">
     <TopNav />
-    <!-- <SideNav /> -->
+    <SideNav />
   </div>
 </template>
 

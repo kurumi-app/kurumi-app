@@ -56,10 +56,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 720,
-        "resizable": true,
+        "height": 800,
+        "resizable": false,
         "title": "kurumi",
-        "width": 1280
+        "width": 1440
       }
     ]
   }
