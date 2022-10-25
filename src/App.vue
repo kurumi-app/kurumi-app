@@ -3,12 +3,19 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import SideNav from "./components/SideNav.vue";
 import TopNav from "./components/TopNav.vue";
+import AnimeList from "./components/AnimeList.vue";
 </script>
 
 <template>
   <div class="container">
-    <TopNav />
-    <SideNav />
+    <div class="navigations">
+      <TopNav />
+      <SideNav />
+    </div>
+
+    <div class="content">
+      <AnimeList />
+    </div>
   </div>
 </template>
 
