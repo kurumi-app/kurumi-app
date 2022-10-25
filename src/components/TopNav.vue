@@ -3,12 +3,19 @@ import { ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 
 // const greetMsg = ref("");
-// const name = ref("");
+const searcha = ref("");
+const animelist = ref("");
 
 // async function greet() {
 //     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 //     greetMsg.value = await invoke("greet", { name: name.value });
 // }
+
+async function search_anime() {
+    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+    animelist.value = await invoke("search_anime", { name: searcha.value });
+}
+
 </script>
 
 <template>
@@ -23,10 +30,11 @@ import { invoke } from "@tauri-apps/api/tauri";
 
         <div class="search">
             <input placeholder="Search an anime"
-                class="searchinput drac-input drac-input-border-sm drac-input-purple drac-text-purple drac-m-xs" />
+                class="searchinput drac-input drac-input-border-sm drac-input-purple drac-text-purple drac-m-xs"
+                v-model="searcha" />
 
             <button class="drac-btn drac-bg-purple drac-btn-outline drac-text-purple drac-m-sm"
-                type="submit">Go!</button>
+                @click="search_anime()">Go!</button>
 
         </div>
 
@@ -54,6 +62,8 @@ import { invoke } from "@tauri-apps/api/tauri";
             </div>
         </div>
 
+
+        <p>{{ animelist }}</p>
 
     </div>
 </template>
